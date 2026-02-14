@@ -10,10 +10,12 @@ const PORT = process.env.PORT || 5000;
 // Allow requests from your frontend
 const corsOptions = {
   origin: [
-    'http://localhost:5173',     
-    'https://abishekkcportfolio.netlify.app/'
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "https://abishekkcportfolio.netlify.app",
   ],
-  credentials: true
+  credentials: true,
+  optionsSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));
@@ -24,8 +26,8 @@ app.get("/", (req, res) => {
     status: "Backend is live 🚀",
     endpoints: {
       test: "/api/test",
-      sendEmail: "/api/send-email"
-    }
+      sendEmail: "/api/send-email",
+    },
   });
 });
 
